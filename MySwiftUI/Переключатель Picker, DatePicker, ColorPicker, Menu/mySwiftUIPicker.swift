@@ -12,21 +12,21 @@ struct mySwiftUIPicker: View {
     @State var selecPicker = "New"
     @State var dataPicker = [ "New", "Moust popular", "Recomend"]
     var body: some View {
-        Picker("Picker", selection: $selecPicker) {
-            ForEach(dataPicker, id: \.self) { dataPick in
-                Text(dataPick)
-            }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-
-//        HStack {
-//            Text("Filter")
-//            Picker("Picker", selection: $selecPicker) {
-//                ForEach(dataPicker, id: \.self) { dataPick in
-//                    Text(dataPick)
-//                }
+//        Picker("Picker", selection: $selecPicker) {
+//            ForEach(dataPicker, id: \.self) { dataPick in
+//                Text(dataPick)
 //            }
 //        }
+//        .pickerStyle(SegmentedPickerStyle())
+
+        HStack {
+            Text("Filter")
+            Picker("Picker", selection: $selecPicker) {
+                ForEach(dataPicker, id: \.self) { dataPick in
+                    Text(dataPick)
+                }
+            }
+        }
 
 //        Text("Age: \(selecPicker)")
 //        Picker("Picker", selection: $selecPicker) {
