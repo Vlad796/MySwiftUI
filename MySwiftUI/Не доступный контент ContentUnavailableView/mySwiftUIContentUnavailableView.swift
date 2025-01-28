@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+//MARK: Обычная страница недоступности той или ино страници
+
 struct mySwiftUIContentUnavailableView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ContentUnavailableView.search
+//        ContentUnavailableView("No Internet conection", systemImage: "wifi.slash", description: Text("Please check your internet conection"))
     }
 }
 

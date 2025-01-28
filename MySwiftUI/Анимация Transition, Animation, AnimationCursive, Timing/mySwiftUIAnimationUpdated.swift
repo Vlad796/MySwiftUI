@@ -8,8 +8,41 @@
 import SwiftUI
 
 struct mySwiftUIAnimationUpdated: View {
+    
+    @State private var toggleBut: Bool = false
+    @State private var toggleBut2: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            VStack{
+                VStack{
+                    Button {
+                        toggleBut.toggle()
+                    } label: {
+                        Text("Toggle 1")
+                    }
+                    .padding(.bottom)
+                    Button {
+                        toggleBut2.toggle()
+                    } label: {
+                        Text("Toggle 2")
+                    }
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 100, height: 100)
+                            .frame(maxWidth: .infinity, alignment: toggleBut ? .leading : .trailing)
+                            .background(Color.green)
+                            .frame(maxHeight: .infinity, alignment: toggleBut2 ? .bottom : .top)
+                            .background(Color.orange)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.red)
+                }
+                .animation(.bouncy, value: toggleBut)
+                .animation(.bouncy, value: toggleBut2)
+            }
+        }
     }
 }
 

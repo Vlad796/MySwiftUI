@@ -23,8 +23,8 @@ struct fruitsInfo: Identifiable {
     let price: String
 }
 
-class MyFruit: ObservableObject {       //Строчкой ObservableObject мы объявляем что этот класс теперь надлюдаемый
-    @Published var fruitsArray: [fruitsInfo] = []   //@Published оператор состояния для одной переменной, которая рабоатет вне тела
+class MyFruit: ObservableObject {       //Строчкой ObservableObject мы объявляем что этот класс теперь наблюдаемый
+    @Published var fruitsArray: [fruitsInfo] = []   //@Published оператор состояния для одной переменной, которая работает вне тела
     @Published var isLoading = false
     
     init() {
@@ -87,8 +87,8 @@ struct mySwiftUI_ObservableObject_StateObject: View {
 
 struct ThreedScreen: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var myFruitAnother: MyFruit     //
+    @Environment(\.presentationMode) var presentationMode       //Выставляет представление для всех дополнительных страниц в приложении. Поэтому не нужно составлять переводы данных представления через каждую страницу, ведь можно обратиться сразу к корневому представлению
+    @ObservedObject var myFruitAnother: MyFruit
     
     var body: some View {
         ZStack{

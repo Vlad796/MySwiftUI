@@ -11,10 +11,14 @@ import SwiftUI
 /*
  @Observable Macro - используется с iOS 17 и выше!!!
  Он является тем же ObservableObject, только он незначительно увеличивает производительность приложения
+ 
+ Можно исплоьзовать @ObservationIgnored для игнорирования обновляющихся данных  
  */
 
 @Observable class ObservableMacroModel{ //Теперь нужно присваивать значения состояния класса с именем
+    
     var text: String = "Some text"  //Теперь нет необходимости прописывать состояние @Published
+    
 }
 
 struct mySwiftUI_ObservableMacro: View {

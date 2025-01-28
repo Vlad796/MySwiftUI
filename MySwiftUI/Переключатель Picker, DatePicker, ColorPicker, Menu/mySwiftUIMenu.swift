@@ -9,7 +9,27 @@ import SwiftUI
 
 struct mySwiftUIMenu: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Menu {
+            Button {
+                
+            } label: {
+                Text("Like")
+            }
+            Button {
+                
+            } label: {
+                Text("Share")
+            }
+            Button {
+                
+            } label: {
+                Text("Trash")
+            }
+
+        } label: {
+            Text("Check menu")
+        }
+
     }
 }
 

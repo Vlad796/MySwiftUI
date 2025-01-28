@@ -9,7 +9,28 @@ import SwiftUI
 
 struct mySwiftUISystemMaterials: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            
+            VStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 40, height: 4)
+                    .padding(.top, 15)
+                Spacer()
+                Text("HI")
+                Spacer()
+            }
+            .frame(height: 300)
+            .frame(maxWidth: .infinity)
+            //.background(.regularMaterial)   //Стандартная прозрачность
+            //.background(.thinMaterial)    //Сильная прозрачность
+            //.background(.thickMaterial)     //Слабая прозрачность
+            .background(.ultraThinMaterial)     //Очень сильная прозрачность
+            //.background(.ultraThickMaterial)    //Очень слабая прозрачность
+            .clipShape(RoundedRectangle(cornerRadius: 30))
+        }
+        .ignoresSafeArea()
+        .background(Image("theRock"))
     }
 }
 
