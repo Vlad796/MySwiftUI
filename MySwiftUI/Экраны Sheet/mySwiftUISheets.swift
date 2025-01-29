@@ -42,7 +42,7 @@ struct mySwiftUISheets: View {
                                             //ТУТ ЭМИТИРУЕТСЯ СОЗДАНИЕ ВТОРОГО ЭКРАНА
 struct SecondScreen: View {
     
-    @Environment(\.presentationMode/*Тут прописывается ключ окружения*/) var presentationMode   //это переменная которая привязывается к текущему представления(в нашем слечае странице). Ещё можно изменить "var presentationMode" на другое имя, но лучше оставить таким же как и ключ окружения
+    @Environment(\.dismiss/*Тут прописывается ключ окружения*/) var dismiss   //это переменная которая привязывается к текущему представления(в нашем слечае странице).
     
     var body: some View {
         ZStack(alignment: .topLeading){
@@ -50,7 +50,7 @@ struct SecondScreen: View {
                 .ignoresSafeArea(.all)
             
             Button {
-                presentationMode.wrappedValue.dismiss()     //Тут мы прописываем какую функцию будет выполнять presentationMode в кнопке
+                dismiss()     //Тут мы прописываем какую функцию будет выполнять presentationMode в кнопке
             } label: {
                 Image(systemName: "xmark")
                     .foregroundStyle(.white)

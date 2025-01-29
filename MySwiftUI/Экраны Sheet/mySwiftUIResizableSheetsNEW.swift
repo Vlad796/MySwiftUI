@@ -48,7 +48,7 @@ struct mySecondSheetView: View {
             Button {
                 detents = .fraction(0.2)
             } label: {
-                Text("Button 20$")
+                Text("Button 20%")
             }
             
             Button {

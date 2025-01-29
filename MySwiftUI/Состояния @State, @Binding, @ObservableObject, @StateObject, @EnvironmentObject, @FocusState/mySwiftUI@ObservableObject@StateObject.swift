@@ -87,7 +87,7 @@ struct mySwiftUI_ObservableObject_StateObject: View {
 
 struct ThreedScreen: View {
     
-    @Environment(\.presentationMode) var presentationMode       //Выставляет представление для всех дополнительных страниц в приложении. Поэтому не нужно составлять переводы данных представления через каждую страницу, ведь можно обратиться сразу к корневому представлению
+//    @Environment(\.presentationMode) var presentationMode       //Выставляет представление для всех дополнительных страниц в приложении. Поэтому не нужно составлять переводы данных представления через каждую страницу, ведь можно обратиться сразу к корневому представлению
     @ObservedObject var myFruitAnother: MyFruit
     
     var body: some View {
